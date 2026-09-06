@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanaya Singh — Web Developer</title>
+<meta name="description" content="Portfolio of Sanaya Singh, a B.Tech CSE student at LPU learning web development.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ LOADER ============ -->
+<div class="loader" id="loader" aria-hidden="true">
+  <pre class="loader-lines" id="loaderLines"></pre>
+</div>
+
+<!-- ============ AMBIENT BACKGROUND ============ -->
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+<div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+
+<!-- custom cursor (disabled on touch via JS) -->
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="siteHeader">
+  <a href="#home" class="brand">Sanaya<span>.dev</span></a>
+
+  <nav class="nav" id="nav">
+    <a href="#home" data-nav>Home</a>
+    <a href="#about" data-nav>About</a>
+    <a href="#education" data-nav>Education</a>
+    <a href="#skills" data-nav>Skills</a>
+    <a href="#projects" data-nav>Projects</a>
+    <a href="#hackathon" data-nav>Hackathon</a>
+    <a href="#certifications" data-nav>Certifications</a>
+    <a href="#career" data-nav>Career</a>
+    <a href="#contact" data-nav>Contact</a>
+    <span class="nav-indicator" id="navIndicator"></span>
+  </nav>
+
+  <div class="header-controls">
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+      <span class="theme-icon theme-icon-dark">●</span>
+      <span class="theme-icon theme-icon-light">○</span>
+    </button>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="home">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="code-eyebrow hero-reveal" style="--d:0s">&gt; whoami</p>
+      <h1 class="hero-title">
+        <span class="reveal-line" style="--d:0.1s">Hi, I'm</span>
+        <span class="reveal-line grad-text" style="--d:0.25s">Sanaya Singh</span>
+      </h1>
+      <p class="hero-role hero-reveal" style="--d:0.45s">B.Tech CSE Student · Learning Web Development</p>
+      <p class="hero-desc hero-reveal" style="--d:0.6s">
+        I'm a Computer Science student at Lovely Professional University,
+        building my skills in programming and web development one project
+        at a time — and working toward becoming a professional web
+        developer.
+      </p>
+
+      <div class="hero-actions hero-reveal" style="--d:0.75s">
+        <a href="#projects" class="btn btn-primary">View My Projects</a>
+        <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+        <a href="#" class="btn btn-ghost btn-disabled" aria-disabled="true" title="Resume coming soon">Resume — coming soon</a>
+      </div>
+
+      <div class="social-row hero-reveal" style="--d:0.9s">
+        <a href="#" class="social-pill" aria-label="GitHub">GitHub</a>
+        <a href="#" class="social-pill" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" class="social-pill" aria-label="Email">Email</a>
+      </div>
+    </div>
+
+    <div class="hero-visual hero-reveal" style="--d:0.4s">
+      <div class="code-window">
+        <div class="code-window-bar">
+          <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
+          <span class="code-window-title">developer.js</span>
+        </div>
+        <pre class="code-window-body"><code id="typedCode"></code><span class="code-caret" id="codeCaret">&nbsp;</span></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT / JOURNEY ============ -->
+  <section class="section" id="about">
+    <p class="code-eyebrow reveal">// about.js</p>
+    <h2 class="section-title reveal">My Journey</h2>
+    <p class="section-note reveal">
+      A quick look at how I got here — from school, to choosing math and
+      engineering, to where I'm headed next.
+    </p>
+
+    <div class="timeline" id="journeyTimeline">
+      <div class="timeline-track" aria-hidden="true">
+        <div class="timeline-fill" id="timelineFill"></div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <span class="timeline-dot"></span>
+        <div class="timeline-content glass-card"><h3>School</h3></div>
+      </div>
+      <div class="timeline-item reveal">
+        <span class="timeline-dot"></span>
+        <div class="timeline-content glass-card"><h3>Mathematics in Class 12</h3></div>
+      </div>
+      <div class="timeline-item reveal">
+        <span class="timeline-dot"></span>
+        <div class="timeline-content glass-card"><h3>B.Tech CSE at LPU</h3></div>
+      </div>
+      <div class="timeline-item reveal">
+        <span class="timeline-dot"></span>
+        <div class="timeline-content glass-card"><h3>Programming</h3></div>
+      </div>
+      <div class="timeline-item reveal">
+        <span class="timeline-dot"></span>
+        <div class="timeline-content glass-card"><h3>Projects</h3></div>
+      </div>
+      <div class="timeline-item reveal">
+        <span class="timeline-dot"></span>
+        <div class="timeline-content glass-card"><h3>Hackathons</h3></div>
+      </div>
+      <div class="timeline-item reveal">
+        <span class="timeline-dot timeline-dot-current"></span>
+        <div class="timeline-content glass-card timeline-current"><h3>Future Web Developer</h3></div>
+      </div>
+    </div>
+
+    <div class="glass-card soft-skills-card reveal">
+      <h3>Soft Skills</h3>
+      <div class="chip-grid">
+        <span class="chip">Communication</span>
+        <span class="chip">Team Management</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION ============ -->
+  <section class="section" id="education">
+    <p class="code-eyebrow reveal">// education.json</p>
+    <h2 class="section-title reveal">Education</h2>
+
+    <div class="edu-grid">
+      <div class="glass-card edu-card reveal">
+        <div class="edu-ring">
+          <svg viewBox="0 0 120 120" class="edu-ring-svg">
+            <circle cx="60" cy="60" r="52" class="edu-ring-track"></circle>
+            <circle cx="60" cy="60" r="52" class="edu-ring-progress" data-target="93"></circle>
+          </svg>
+          <span class="edu-ring-value" data-count-to="93">0%</span>
+        </div>
+        <h3>Class 10th</h3>
+      </div>
+
+      <div class="glass-card edu-card reveal">
+        <div class="edu-ring">
+          <svg viewBox="0 0 120 120" class="edu-ring-svg">
+            <circle cx="60" cy="60" r="52" class="edu-ring-track"></circle>
+            <circle cx="60" cy="60" r="52" class="edu-ring-progress" data-target="81.7"></circle>
+          </svg>
+          <span class="edu-ring-value" data-count-to="81.7">0%</span>
+        </div>
+        <h3>Class 12th</h3>
+      </div>
+
+      <div class="glass-card edu-card edu-card-wide reveal">
+        <h3>B.Tech — Computer Science &amp; Engineering</h3>
+        <p class="edu-meta">Lovely Professional University</p>
+        <p>Currently pursuing a B.Tech in CSE, building a foundation in programming, problem-solving, and software/web development.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="section" id="skills">
+    <p class="code-eyebrow reveal">&gt; skills.list()</p>
+    <h2 class="section-title reveal">Skills</h2>
+
+    <div class="tabs reveal" role="tablist" aria-label="Skill categories">
+      <button class="tab active" role="tab" aria-selected="true" data-tab="programming">Programming</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="web">Web Development</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="exploring">Currently Exploring</button>
+    </div>
+
+    <div class="tab-panels reveal">
+      <div class="tab-panel active" data-panel="programming">
+        <div class="skill-grid">
+          <div class="skill-card"><span class="skill-glyph">C++</span><h4>C++</h4></div>
+          <div class="skill-card"><span class="skill-glyph">Py</span><h4>Python</h4></div>
+          <div class="skill-card"><span class="skill-glyph">C</span><h4>C</h4></div>
+          <div class="skill-card"><span class="skill-glyph">JS</span><h4>JavaScript</h4></div>
+        </div>
+      </div>
+      <div class="tab-panel" data-panel="web">
+        <div class="skill-grid">
+          <div class="skill-card skill-placeholder"><h4>[ADD WEB DEVELOPMENT SKILLS]</h4></div>
+        </div>
+      </div>
+      <div class="tab-panel" data-panel="exploring">
+        <div class="skill-grid">
+          <div class="skill-card skill-placeholder"><h4>[ADD CURRENTLY EXPLORING]</h4></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="section" id="projects">
+    <p class="code-eyebrow reveal">// projects.list</p>
+    <h2 class="section-title reveal">Projects</h2>
+
+    <div class="project-card glass-card reveal" data-modal-target="modalSmartGlasses" tabindex="0" role="button" aria-haspopup="dialog">
+      <div class="project-visual" aria-hidden="true">
+        <span>SG</span>
+      </div>
+      <div class="project-info">
+        <h3>Smart Glasses for Blind People</h3>
+        <p>ECE Group Project</p>
+        <div class="tag-row">
+          <span class="chip chip-outline">AI-based</span>
+          <span class="chip chip-outline">Assistive Tech</span>
+        </div>
+      </div>
+      <span class="project-arrow" aria-hidden="true">→</span>
+    </div>
+  </section>
+
+  <!-- Project modal -->
+  <div class="modal-backdrop" id="modalSmartGlasses" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal glass-card">
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+      <h3 id="modalTitle">Smart Glasses for Blind People</h3>
+      <p class="edu-meta">Project Type: ECE Group Project</p>
+      <p>
+        We built smart glasses using AI-based technology to assist blind
+        people in their daily lives.
+      </p>
+    </div>
+  </div>
+
+  <!-- ============ HACKATHON ============ -->
+  <section class="section" id="hackathon">
+    <p class="code-eyebrow reveal">// hackathon.log</p>
+    <h2 class="section-title reveal">Hackathon</h2>
+
+    <div class="glass-card hackathon-card reveal">
+      <div class="trophy-wrap" aria-hidden="true">
+        <span class="trophy">🏆</span>
+        <span class="trophy-particle p1"></span>
+        <span class="trophy-particle p2"></span>
+        <span class="trophy-particle p3"></span>
+      </div>
+      <div>
+        <h3>Book Suggestion Website</h3>
+        <p>
+          Built a book suggestion website during a hackathon, recommending
+          books to users based on their interests.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CERTIFICATIONS ============ -->
+  <section class="section" id="certifications">
+    <p class="code-eyebrow reveal">// certifications.index</p>
+    <h2 class="section-title reveal">Certifications</h2>
+
+    <div class="cert-grid">
+      <div class="glass-card cert-card reveal">
+        <span class="cert-accent" aria-hidden="true"></span>
+        <h4>Python Programming Certification</h4>
+        <p class="edu-meta">Infosys Springboard</p>
+        <button class="btn btn-ghost btn-sm btn-disabled" type="button" disabled>Certificate link coming soon</button>
+      </div>
+      <div class="glass-card cert-card reveal">
+        <span class="cert-accent" aria-hidden="true"></span>
+        <h4>Cyber Security Certification</h4>
+        <p class="edu-meta">Infosys Springboard</p>
+        <button class="btn btn-ghost btn-sm btn-disabled" type="button" disabled>Certificate link coming soon</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CAREER VISION ============ -->
+  <section class="section" id="career">
+    <p class="code-eyebrow reveal">// career.vision</p>
+    <h2 class="career-statement reveal" id="careerStatement">
+      <span>Dream.</span><span>Plan.</span><span>Code.</span><span>Achieve.</span>
+    </h2>
+
+    <div class="goal-list">
+      <div class="goal-item reveal">
+        <span class="goal-num">01</span>
+        <p>Enhance Web Development Skills</p>
+      </div>
+      <div class="goal-item reveal">
+        <span class="goal-num">02</span>
+        <p>Learn DevOps</p>
+      </div>
+      <div class="goal-item reveal">
+        <span class="goal-num">03</span>
+        <p>Solve Real-World Problems</p>
+      </div>
+      <div class="goal-item reveal">
+        <span class="goal-num">04</span>
+        <p>Keep Learning &amp; Growing</p>
+      </div>
+      <div class="goal-item reveal">
+        <span class="goal-num">05</span>
+        <p>Build Meaningful Solutions</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section" id="contact">
+    <p class="code-eyebrow reveal">// contact.js</p>
+    <h2 class="section-title reveal">Get In Touch</h2>
+    <p class="section-note reveal">
+      Reach out for collaboration, hackathons, or just to say hi. Links
+      below will go live as soon as I add my real accounts.
+    </p>
+
+    <div class="contact-grid reveal">
+      <a href="#" class="glass-card contact-tile">
+        <span>GitHub</span>
+        <span class="placeholder-line">[ADD GITHUB URL]</span>
+      </a>
+      <a href="#" class="glass-card contact-tile">
+        <span>LinkedIn</span>
+        <span class="placeholder-line">[ADD LINKEDIN URL]</span>
+      </a>
+      <a href="#" class="glass-card contact-tile">
+        <span>Email</span>
+        <span class="placeholder-line">[ADD EMAIL]</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <p class="footer-name">Sanaya Singh</p>
+      <p class="footer-role">B.Tech CSE Student · Lovely Professional University</p>
+    </div>
+    <div class="footer-social">
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Email</a>
+    </div>
+  </div>
+  <p class="footer-copy">© <span id="year"></span> Sanaya Singh. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
